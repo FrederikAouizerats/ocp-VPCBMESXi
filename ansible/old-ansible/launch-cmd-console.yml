@@ -1,0 +1,18 @@
+---
+- name: Execute shell command on VMware virtual machine
+  hosts: localhost
+  become: yes
+  gather_facts: false
+  collections:
+    - community.vmware
+  tasks:
+    - name: Run shell command
+      vmware_guest_command:
+        hostname: "161.156.81.115"
+        username: "root"
+        password: "d8HUT0R$tNxNgH2A7ky5"
+        validate_certs: 'false'
+        esxi_hostname: [bm-esxi-ocp]
+        name: bootstrap 
+        command: "coreos.inst.install_dev=sda coreos.inst.image_url=http://192.168.22.1:8080/ocp4/rhcos coreos.inst.insecure=yes"
+      delegate_to: localhost

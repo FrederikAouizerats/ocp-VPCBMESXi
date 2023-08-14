@@ -1,0 +1,11 @@
+# do not upload to git the files bellow #
+#########################################
+terraform.tfvars
+.terraform/providers/registry.terraform.io/ibm-cloud/ibm/1.56.0/darwin_amd64/terraform-provider-ibm_v1.56.0
+.terraform/providers/registry.terraform.io/ibm-cloud/ibm/1.53.0/darwin_amd64/terraform-provider-ibm_v1.53.0
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+trash/ 
+ocp-sws/

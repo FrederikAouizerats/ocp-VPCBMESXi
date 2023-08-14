@@ -1,0 +1,35 @@
+---
+- name: Mount VMFS datastores to ESXi
+  hosts: localhost
+  become: yes
+  gather_facts: false
+  collections:
+    - community.vmware
+  tasks:
+    - name: Gather info about vmhbas of an ESXi Host
+      community.vmware.vmware_host_disk_info:
+        hostname: "161.156.81.115"
+        username: "root"
+        password: "d8HUT0R$tNxNgH2A7ky5"
+        esxi_hostname: bm-esxi-ocp
+        validate_certs: false
+      register: host_vmhbas
+    - name: Setting host facts using key=value pairs, this format can only create strings or booleans
+      ansible.builtin.set_fact: diskname="{{ host_vmhbas.hosts_disk_info['bm-esxi-ocp'][0]['canonical_name'] }}"
+    - name: disk identifier
+      ansible.builtin.debug:
+        var: diskname
+    - name: Create vmfs 
+      vmware_host_datastore:
+        hostname: "161.156.81.115"
+        username: "root"
+        password: "d8HUT0R$tNxNgH2A7ky5"
+        esxi_hostname: bm-esxi-ocp
+        validate_certs: 'false'
+        datastore_name: VMs
+        datastore_type: vmfs
+        vmfs_device_name: "{{ diskname }}"
+        vmfs_version: 6
+        state: absent
+
+

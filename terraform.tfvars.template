@@ -1,0 +1,13 @@
+ibmcloud_api_key = ""
+region = "eu-de"
+resources_group = "ocpbmesxi-rg"
+name_vpc = "ocp-bm-vpc"
+security_group = "ocpbmesxi-sg"
+security_group-inbound_rule = "inbound_rule"
+security_group-egress_rule = "egress_rule"
+zone_number = "2"
+ip_block = ["192.168.22.0/24","192.168.0.0/24"]
+user-sshpubkeyname = "userpubsshkeyname"
+user-public-key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmK3ydSI+Qd7ZBQzNJSXFBJb0BKoqfCVW7QqN6v63c8tD5I6yicYFnk8e4zRbICpPjSn0+GQoaDNwjMJh/PV1i9zeIellEaXsc1VEQxNdCrO/bHmuqd64Dl2yP6jrSelnRVU4H8YRynJBnq+VPLGEJplMi0JxA4PLspzF+OylHiextMeXL6i/bNjk+e03zQILRUjuWSwrBXsxR6dZur8uMsycTxP/valy/5Rkv4CoRGpU+cYnYyOZQu83oN0Xwy9ggBTW+sxTe27urZI3zqgbBrJhTrDAsO2QwkmQbZl+X2ZsfE3xxROxBfx74QIzJvSXxFEffHqz5I9VxBCEwI3kF7eOV45+FYKx5FdYVfkvWDFIPtLhIM71mwlsOclkEChezV2V1WpeQa+1DLwNEwOAkgpYV6J9wNf55N+4qVUV7tPGkFyOcHvrKQiS3d9LLwsIRL4xNDxWCUgbPGxsCKTk0SBvmgxihsr5HjCsh5bUjOSB2/tUi8vao36/ZRFGQNXs= frederik@frederiks-mbp.azorim.il.ibm.com"
+image-instance = "imageinstance"
+vsi-instance = "vsiinstance"
